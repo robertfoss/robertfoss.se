@@ -1,0 +1,253 @@
+/*@font-face {
+	font-family: 'mplus-1c-thin';
+	src: url('/fonts/mplus-1c-thin.eot');
+	src: local('☺'), 
+		 url('/resources/fonts/mplus-1c-thin-webfont.woff') format('woff'), 
+		 url('/resources/fonts/mplus-1c-thin-webfont.ttf') format('truetype'), 
+		 url('/resources/fonts/mplus-1c-thin-webfont.svg#webfontjVGm7rsv') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+*/
+@font-face {
+	font-family: 'Aliquam';
+	src: url('/resources/fonts/Aliquam.eot');
+	src: local('☺'),
+		url('/resources/fonts/Aliquam.woff') format('woff'),
+		url('/resources/fonts/Aliquam.ttf') format('truetype'),
+		url('/resources/fonts/Aliquam.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+html, body{ padding:20px 0px 20px 0px; margin:0; text-align:center; font-family: "Aliquam","Helvetica",Arial,sans-serif; text-shadow: 0 0 0.1em rgba(0,0,0,0.02); font-size: 15px;} 
+a {color:#5C8EA9;}
+
+#page{ width:900px; text-align:left; margin-left:auto; margin-right:auto;} 
+
+#header{ position:relative; font-family: "Aliquam","Helvetica",Arial,sans-serif; width:900px; margin: 0px; padding: 0px; height:50px; overflow-x:hidden; overflow-y:hidden;} 
+#header h1{ position:relative; float:left; margin:0px 0px 0px 250px; width: 650px; padding:0px; font-family: "Aliquam","Helvetica",Arial,sans-serif; font-size:20px; text-transform:uppercase;} 
+#header h1 a{ text-decoration:none;}
+#header h1 a:hover{ text-decoration:none;}
+#header h2{ position:relative; float:left; clear:left; margin:0px 0px 0px 250px; width: 650px; padding:0px; font-family: "Aliquam","Helvetica",Arial,sans-serif; font-size:14px; text-transform:uppercase;} 
+ 
+#leftcol{ width:230px; float:left; position:relative; padding: 0px 20px 0px 0px; text-align:right; overflow-x:hidden; overflow-y:hidden;}
+ 
+#menu {margin:0px 0px; text-align:right; font-family: "Aliquam","Helvetica",Arial,sans-serif; text-transform:uppercase; font-size:14px; }
+#menu a {font-weight:bold; font-family: "Aliquam","Helvetica",Arial,sans-serif; text-transform:uppercase; font-size:14px; text-decoration:none;}
+#menu a:hover {font-family: "Aliquam","Helvetica",Arial,sans-serif; text-transform:uppercase; font-size:14px; text-decoration:none;}
+
+h2.menuheader {cursor: pointer; font-family: "Aliquam","Helvetica",Arial,sans-serif; font-size:18px; text-transform:uppercase;margin:0px; padding:0px;}
+
+
+#menu ul {cursor: pointer; padding: 2px 0px 2px 0px; margin: 0px 0px 0px 0px;list-style: none; width:230px; clear:left; float:right;}
+#menu ul li{cursor: pointer; margin: 0px 0px 0px 0px; display: block; font-family: "Aliquam","Helvetica",Arial,sans-serif; text-transform:uppercase; font-size:15px;}
+#menu ul li a{cursor: pointer; width: 225px; display: block; padding: 5px 0px 5px 5px; text-decoration:none; font-family: "Aliquam","Helvetica",Arial,sans-serif; text-transform:uppercase; font-size:14px; margin: 0px 0px 0px 0px; vertical-align: bottom;}
+#menu ul li a:hover{ text-decoration:none; }
+#menu ul li ul {padding: 2px 0px 2px 0px; margin: 0px 0px 0px 0px;list-style: none; clear:left; }
+#menu ul li ul li{margin: 0px 0px 0px 0px; display: block; }
+#menu ul li ul li a{ width: 205px; display: block; padding: 5px 20px 5px 5px; text-decoration:none; font-family: "Aliquam","Helvetica",Arial,sans-serif; text-transform:uppercase; font-size:14px; margin: 0px 0px 0px 0px; vertical-align: bottom;}
+#menu ul li ul li a:hover{ text-decoration:none; }
+#menu ul li ul li ul {padding: 2px 0px 2px 0px; margin: 0px 0px 0px 0px;list-style: none; clear:left; }
+#menu ul li ul li ul li{margin: 0px 0px 0px 0px; display: block; }
+#menu ul li ul li ul li a{ width: 185px; padding: 5px 40px 5px 5px; display: block; text-decoration:none; font-family: "Aliquam","Helvetica",Arial,sans-serif; text-transform:uppercase; font-size:14px; margin: 0px 0px 0px 0px; vertical-align: bottom;}
+#menu ul li ul li ul li a:hover{ text-decoration:none; }
+#menu ul li ul li ul li ul {padding: 2px 0px 2px 0px; margin: 0px 0px 0px 0px;list-style: none; clear:left; }
+#menu ul li ul li ul li ul li{margin: 0px 0px 0px 0px; display: block; }
+#menu ul li ul li ul li ul li a{ width: 165px; padding: 5px 60px 5px 5px; display: block; text-decoration:none; font-family: "Aliquam","Helvetica",Arial,sans-serif; text-transform:uppercase; font-size:14px; margin: 0px 0px 0px 0px; vertical-align: bottom;}
+#menu ul li ul li ul li ul li a:hover{ text-decoration:none; }
+
+ul#recentcomments {padding: 2px 0px 2px 0px; margin: 0px 0px 0px 0px;list-style: none; width:230px; clear:left; float:right;}
+ul#recentcomments li{margin: 0px 0px 0px 0px; display: block; font-weight:bold; font-family:helvetica; text-transform:uppercase; font-size:14px;}
+ul#recentcomments li a{ width: 225px; display: block; padding: 5px 0px 5px 5px; text-decoration:none; font-weight:bold; font-family:helvetica; text-transform:uppercase; font-size:14px; margin: 0px 0px 0px 0px; vertical-align: bottom;}
+ul#recentcomments li a:hover{ text-decoration:none; }
+#recentcomments a{ text-decoration:none; font-weight:bold; font-family:helvetica; text-transform:uppercase; font-size:14px;}
+#recentcomments a:hover{ text-decoration:none; font-weight:bold; font-family:helvetica; text-transform:uppercase; font-size:14px; }
+
+.maincol{ float: right; display:inline; position: relative; width:650px; font-family:helvetica; font-size: 13px;overflow-x:hidden; overflow-y:hidden; text-align:left;}
+.maincol h1 {margin:0px 0px 0px 0px; padding:0px; font-family: "Helvetica",Arial,sans-serif; font-size:22px; text-transform:uppercase; clear:both;} 
+.maincol h2 { margin:0px 0px 0px 0px; padding:0px; font-family: "Helvetica",Arial,sans-serif; font-size:20px;text-transform:uppercase; clear:both;} 
+.maincol h2 a{ text-decoration:none;} 
+
+.maincol h3 { margin:0px 0px 0px 0px; padding:0px; font-family: "Helvetica",Arial,sans-serif; font-size:18px; text-transform:uppercase; clear:both;} 
+.maincol h4 { margin:0px 0px 0px 0px; padding:0px; font-family: "Helvetica",Arial,sans-serif; color: rgba(0, 0, 0, 0.75);font-size:16px; text-transform:uppercase; clear:both;} 
+.maincol h5 { margin:0px 0px 0px 0px; padding:0px; font-family: "Helvetica",Arial,sans-serif; font-size:14px; text-transform:uppercase; clear:both;} 
+.maincol h6 { margin:0px 0px 0px 0px; padding:0px; font-family: "Helvetica",Arial,sans-serif; font-size:12px; text-transform:uppercase; clear:both;} 
+.maincol p{ font-size: 13px; line-height:1.5em;}
+.maincol p a:hover{ text-decoration:none;}
+.maincol ul{ font-size: 13px; line-height:1.5em; clear:left;}
+.maincol ol{ font-size: 13px; line-height:1.5em; clear:left;}
+
+h2.contentheader{ cursor: pointer; position:relative; float:left; margin:0px 0px 0px 0px; padding:0px; font-family: "Aliquam","Helvetica",Arial,sans-serif; font-size:20px; text-transform:uppercase; clear:left;} 
+h2.contentheader:hover{ }
+h2.contentheader:active{ }
+
+.content{clear:both;}
+
+.permalink{ margin:0px 0px 0px 0px; padding:0px; font-family:helvetica; font-weight:bold; font-size:12px; text-transform:uppercase; clear:both;} 
+.permalink a{ text-decoration:none;} 
+.permalink a:hover{ text-decoration:none;} 
+
+
+blockquote { margin:20px; padding:8px 8px 8px 15px;}
+blockquote p {background-color:inherit; font-size:0.9em; line-height:1.3em;}
+label {background-color:inherit; font-size:0.9em; font-weight:bold;}
+table#wp-calendar {margin:0 0 20px; width:140px;}
+code {font-size:1.2em; display:block; padding:5px 5px 5px 8px; margin:5px 0 15px 0;}
+
+
+#respond{font-weight:normal;}
+#s,#submit { font-size:0.9em; margin:0 0 16px; padding:4px; width:130px;}
+#author,#email,#url,#comment { font-family:Verdana,Tahoma,helvetica,Sans-Serif; font-size:1em; margin:0; padding:4px;}
+#commentsection {margin:25px 0 0;}
+#commentsection p {margin:0 0 6px;}
+
+
+
+img.centered {display:block; margin-left:auto; margin-right:auto;}
+img.alignright {float:right; padding:6px; margin:0 0 2px 7px; display:inline;}
+img.alignleft {float:left; padding:6px; margin:0 7px 2px 0; display:inline;}
+.aligncenter { display: block; margin-left: auto; margin-right: auto;}
+.alignright {float:right;}
+.alignleft {float:left;}
+
+.divider{height: 25px; width:604px; background: url(img/divider.jpg) top center no-repeat; margin: 10px auto 5px auto;}
+.left { float:left; margin:10px 15px 10px 0;}
+.right { float:right; margin:10px 0 5px 10px;}
+.center { margin:5px auto 12px; text-align:center;}
+.textright {text-align:right;}
+.small {font-size:0.8em;}
+.bold {font-weight:bold;}
+.hide {display:none;}
+.post {margin:0px;}
+
+#postinfotext{font-family:helvetica; font-size: 14px; line-height:1.7em; text-transform:uppercase; padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px;}
+#postinfotext a { text-decoration:none;}
+#postinfotext a:hover{ }
+
+
+.commentheader {font-family:helvetica; font-size: 16px; line-height:1.7em; font-weight:bold; text-transform:uppercase; }
+.comment { margin:0 0 10px; padding:2px 5px 0px 8px;}
+
+.commenticon {font-family:helvetica; font-size: 14px; line-height:1.7em; font-weight:bold; text-transform:uppercase;}
+.commenticon a{ text-decoration:none;}
+.commenticon a:hover{ }
+
+.commenttext { font-size: 13px; line-height:1.7em; }
+.commenttext p{ font-size: 13px; line-height:1.7em; }
+
+.comment p {line-height:1.7em; margin:0px; padding-bottom:2px;}
+.gravatarside {float:right; width:48px; height:48px; margin:0px 5px 5px 5px;}
+.wp-caption { text-align: center; padding-top: 4px; margin: 10px; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; clear:both; border: 1px solid rgba(0,0,0,0.05); background-color: rgba(0,0,0,0.02);}
+.box { padding: 4px 4px 4px 4px; -moz-border-radius: 3px; -khtml-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; clear:both; border: 1px solid rgba(0,0,0,0.05); background-color: rgba(0,0,0,0.02);}
+.box img { float: right; margin: 5px 5px 10px 5px; padding: 0; border: 1px solid rgba(0,0,0,0.05); background-color: rgba(0,0,0,0.02);}
+.box p { margin: 0; padding: 0; border: 0 none;}
+.wp-caption img { margin: 0; padding: 0; border: 0 none;}
+.wp-caption-dd { font-size: 11px; line-height: 17px; padding: 0 4px 5px; margin: 0;}
+
+
+.navigation {font-family:helvetica; font-size: 14px; line-height:1.7em; font-weight:bold; text-transform:uppercase;}
+.navigation a { text-decoration:none;}
+.navigation a:hover{ }
+.prevlink{margin: 0px 6px 0px 0px;}
+.nextlink{margin: 0px 0px 0px 6px;}
+
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+ 
+.clearfix{display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix{height: 1%;}
+.clearfix{display: block;}
+/* End hide from IE-mac */ 
+
+
+ 
+ /*printer styles*/ 
+ @media print{ 
+/*hide the left column when printing*/ 
+#leftcol{display:none;} 
+#twocols, #maincol{width:100%; float:none;}
+}
+
+
+/* Color settings */
+html, body{ background-color:#FFFFFF;} 
+
+#header h1{ color:#AAAAAA;} 
+#header h1 a{color:#AAAAAA; }
+#header h1 a:hover{color:#333333; }
+#header h2{ color:#555555; } 
+ 
+#menu {color:#AAAAAA; }
+#menu a {color:#AAAAAA; }
+#menu a:hover {color:#AAAAAA; }
+
+h2.menuheader {color:#555555; }
+h2.menuheader:hover{color:#000000;}
+h2.menuheader:active{color:#000000;}
+
+#menu ul li{color:#888888; }
+#menu ul li:hover{ color:#000000; }
+#menu ul li a{ color:#888888; }
+#menu ul li a:hover{ color:#000000; }
+
+#menu ul li ul li a{ color:#888888; }
+#menu ul li ul li a:hover{ color:#000000; }
+
+#menu ul li ul li ul li a{ color:#888888; }
+#menu ul li ul li ul li a:hover{ color:#000000; }
+
+#menu ul li ul li ul li ul li a{ color:#888888; }
+#menu ul li ul li ul li ul li a:hover{ color:#000000; }
+
+#recentcomments{ color:#AAAAAA; }
+#recentcomments a{ color:#AAAAAA; }
+#recentcomments a:hover{color:#000000; }
+
+.box {border: 1px solid #DDDDDD; background-color: #FFFFFF; background-color: rgba(0,0,0,0.02);  }
+
+#maincol h2 a{color:#AAAAAA; } 
+#maincol h2 a:hover{ color:#333333;}
+#maincol p{color:#333333; }
+#maincol p a{ color:#333333; }
+#maincol p a:hover{ color:#333333; }
+#maincol ul{ color:#333333; }
+#maincol ol{ color:#333333; }
+
+h2.contentheader{ color:#AAAAAA; } 
+h2.contentheader:hover{color:#000000;}
+h2.contentheader:active{color:#000000;}
+
+.permalink{ color:#AAAAAA; } 
+.permalink a{color:#AAAAAA; } 
+.permalink a:hover{color:#333333; } 
+
+blockquote p {color:#333333;}
+label {color:#333333;}
+
+#s,#submit {background-color:#ffffff; border:1px solid #AAAAAA; color:#505050;}
+#author,#email,#url,#comment {border:1px solid #AAAAAA;}
+
+.left {border:1px solid #AAAAAA;}
+.right {border:1px solid #AAAAAA; }
+.center {border:1px solid #aaaaaa;}
+
+#postinfotext{ margin-top: 10px; color:#AAAAAA; border-top: 1px dashed #AAAAAA; border-bottom: 1px dashed #AAAAAA; width: 350px;}
+#postinfotext a { color:#AAAAAA; }
+#postinfotext a:hover{ color:#333333; }
+
+.commentheader {color:#AAAAAA; }
+
+.commenticon {color:#AAAAAA; }
+.commenticon a{ color:#AAAAAA; }
+.commenticon a:hover{ color:#333333; }
+
+.commenttext {color:#AAAAAA; }
+.commenttext p{color:#AAAAAA; }
+
+.navigation {color:#AAAAAA; }
+.navigation a { color:#AAAAAA; }
+.navigation a:hover{ color:#333333; }

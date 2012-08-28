@@ -1,0 +1,20 @@
+function [boolean] = intersection(rect1, rect2, maxIterations)
+% Calculate if two rectangles intersect
+%
+% Input:
+% points1     The position vecotr of rectangle 1
+% points2     The position vector of rectangle 2
+%
+% Output:
+% boolean     Do the rectangles intersect. 0 = no.
+
+end
+
+
+
+
+function [intersect] = innerIntersect(iteration, maxIteration, points)
+
+
+
+end

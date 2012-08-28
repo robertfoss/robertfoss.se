@@ -1,0 +1,26 @@
+function [x, y, points] = splitlower(nbrPoints, points, tsplit)
+% Wrap the decasteljau algorithm for easier syntax and better readability
+% and return Bezier curve of t<tsplit
+%
+% Input:
+% nbrPoints   Desired number of points of the resulting Bezier curve
+% points      Control points used to create Bezier curve
+% tsplit      Only return parts of the bezier curve generated with t<tsplit
+%
+% Output:
+% x           Vector of x-coordinates of the innermost points used to calculate the Bézier curve
+% y           Vector of y-coordinates of the innermost points used to calculate the Bézier curve
+% points      Matrix of the innermost points used to calculate the Bézier curve
+
+n=nbrPoints;
+t = linspace(0,tsplit,n+1);
+bezier = zeros(n+1,2);
+for i = 1:n+1
+    [~, prevPoint] = decasteljau(t(i),points);
+    bezier(i,1:2) = prevPoint;
+end
+x=bezier(:,1);
+y=bezier(:,2);
+points = bezier;
+
+end

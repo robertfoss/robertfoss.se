@@ -1,0 +1,328 @@
+% Reset
+clear all
+close all
+hold off
+
+
+% Task 1
+points = [1 1; 1 3; 3 3; 2 2];
+bezier = decasteljau(0.1,points);
+
+
+% Task 2
+hold on
+title('Task 2');
+[x,y]=wrap(100,points);
+plot(x,y,'g--');
+legend('Bezier curve');
+saveas(gcf(),'task2.png');
+
+
+% Task 3 a A cubic Bezier curve
+figure();
+points = [1 1; 1 3; 3 3; 2 2; 3 3;];
+x = points(:,1);
+y = points(:,2);
+k = convhull(x,y);
+
+plot(x(k),y(k),'g');
+hold on
+title('Task 3a, Cubic Bezier curve');
+[x,y]=wrap(100,points);
+plot(x,y,'g--');
+
+axis([0.5, 3, 1, 3.5])
+legend('Convex hull','Bezier curve');
+saveas(gcf(),'task3a.png');
+
+
+% Task 3 b An open curve of degree 4
+figure();
+points = [1 1; 1 3; 3 3; 2 2; 3 3; 1.5 2;];
+x = points(:,1);
+y = points(:,2);
+k = convhull(x,y);
+
+plot(x(k),y(k),'g');
+hold on
+title('Task 3b, Open curve of degree 4');
+
+[x,y]=wrap(100,points);
+plot(x,y,'g--');
+axis([0.5, 3, 1, 3.5])
+legend('Convex hull','Bezier curve');
+saveas(gcf(),'task3b.png');
+
+
+% Task 3 c Closed Bezier curve
+figure;
+points = [1 1; 1 3; 3 3; 2 2; 3 3; 1 1;];
+x = points(:,1);
+y = points(:,2);
+k = convhull(x,y);
+
+plot(x(k),y(k),'g');
+hold on
+title('Task 3c, Closed Bezier curve');
+
+[x,y]=wrap(100,points);
+plot(x,y,'g--');
+axis([0.5, 3, 1, 3.5])
+legend('Convex hull','Bezier curve');
+saveas(gcf(),'task3c.png');
+
+
+% Task 3 d Loop but no multiple control points
+figure;
+points = [1 1; 1 3; 3 3; 2 2; 1 2;];
+x = points(:,1);
+y = points(:,2);
+k = convhull(x,y);
+
+plot(x(k),y(k),'g');
+hold on
+title('Task 3d, Loop but no multiple control points');
+
+[x,y]=wrap(100,points);
+plot(x,y,'g--');
+axis([0.5, 3, 1, 3.5])
+legend('Convex hull','Bezier curve');
+saveas(gcf(),'task3d.png');
+
+% Task 3 e Loop with multiple control points
+figure;
+points = [1 1; 1 3; 3 3; 2 2; 1 3;];
+x = points(:,1);
+y = points(:,2);
+k = convhull(x,y);
+
+plot(x(k),y(k),'g');
+hold on
+title('Task 3e, Loop with multiple control points');
+
+[x,y]=wrap(100,points);
+plot(x,y,'g--');
+axis([0.5, 3, 1, 3.5])
+legend('Control points','Bezier curve');
+saveas(gcf(),'task3e.png');
+
+
+% Task 4 a do not connect in a smooth way
+figure;
+hold on;
+title('Task 4a, Non-smooth connection');
+
+points1 = [0 0; 1 0; 1 1; 2 2;];
+points2 = [2 2; 3 1; 2 2; 3 3];
+
+[x1,y1]=wrap(100,points1);
+[x2,y2]=wrap(100,points2);
+plot(x1,y1,'g--');
+plot(x2,y2,'b--');
+lgnd = legend('Bezier curve 1','Bezier curve2');
+set(lgnd,'color','none');
+saveas(gcf(),'task4a.png');
+
+
+% Task 4 b connect in a smooth way
+figure;
+hold on;
+title('Task 4b, Smooth connection');
+points1 = [0 0; 1 0; 1 1; 2 2;];
+points2 = [2 2; 3 3; 2 3; 4 1;];
+
+[x1,y1]=wrap(100,points1);
+[x2,y2]=wrap(100,points2);
+plot(x1,y1,'g--');
+plot(x2,y2,'b--');
+lgnd=legend('Bezier curve 1','Bezier curve 2');
+set(lgnd,'color','none');
+saveas(gcf(),'task4b.png');
+
+
+% Task 5 Plot the Bezier curves with control points 
+%[ (0,0) , (1,1) , (2,0) ] and 
+%[ (0,2.5) , (1 -2) , (2, 0.5) ] and their convex hulls.
+figure;
+hold on;
+title('Task 5');
+points1 = [0 0; 1 1; 2 0;];
+points2 = [0 2.5; 1 -2; 2 0.5;];
+
+x1 = points1(:,1);
+y1 = points1(:,2);
+k1 = convhull(x1,y1);
+x2 = points2(:,1);
+y2 = points2(:,2);
+k2 = convhull(x2,y2);
+plot(x1(k1),y1(k1),'g');
+plot(x2(k2),y2(k2),'b');
+
+[x1,y1]=wrap(100,points1);
+[x2,y2]=wrap(100,points2);
+plot(x1,y1,'g--');
+plot(x2,y2,'b--');
+lgnd=legend('Convex hull, curve 1','Convex hull, curve 2','Bezier curve 1','Bezier curve 2');
+set(lgnd,'color','none');
+saveas(gcf(),'task5.png');
+
+
+% Task 6 Split curve into left and right curves with t=0.5 as a threshold
+figure;
+hold on
+title('Task 6, Split a curve with t=0.5 as threshold');
+points = [0 2.5; 1 2.5; 2 1.5; 1 0; 0 -0.5;];
+t = 0.5;
+
+[~,~,controlPoints1] = splitlower(points,t);
+plot(controlPoints1(:,1),controlPoints1(:,2),'+g');
+
+[~,~,controlPoints2] = splitupper(points,t);
+plot(controlPoints2(:,1),controlPoints2(:,2),'+b');
+
+[x1,y1]=wrap(100,controlPoints1);
+[x2,y2]=wrap(100,controlPoints2);
+plot(x1,y1,'g--');
+plot(x2,y2,'b--');
+
+lgnd=legend('Lower control points, t<=0.5','Upper control points, t>=0.5','Lower Bezier curve, t<=0.5','Upper Bezier Curve, t>=0.5','Cp t>0.5','Bezier curve, any t','Regular Bezier curve');
+set(lgnd,'color','none');
+saveas(gcf(),'task6.png');
+
+
+% Task 7 construct the smallest rectangle parallel to the x
+% and y axes that contains the convex hull of a given Bezier
+figure;
+hold on
+title('Task 7, Construct rectangle around convex hull of a Bezier curve');
+points = [0 2.5; 1 2.5; 2 1.5; 1 0; 0 -0.5;];
+
+[box1, ~] = box(points);
+plot(box1(:,1),box1(:,2),'r');
+axis([-0.5, 2.5, -1, 3])
+saveas(gcf(),'task7.png');
+
+
+% Task 8 calculate the intersection of two rectangles
+figure;
+hold on
+title('Task 8, Calculate if two rectangles intersect');
+points1 = [0 0; 2 0; 2 5; 0 5;];
+points2 = [1 4; 5 4; 5 6; 1 6;];
+
+[box1,posVect1] = box(points1);
+[box2,posVect2] = box(points2);
+plot(box1(:,1),box1(:,2),'r');
+plot(box2(:,1),box2(:,2),'r');
+boolean = rectint(posVect1, posVect2);
+
+if (boolean > 0)
+    txt = 'Intersection: Yes';
+else
+    txt = 'Intersection: No';
+end
+text(1.8,1,txt);
+axis([-0.5, 5.5, -0.5, 6.5])
+saveas(gcf(),'task8.png');
+
+
+% Task 9a calculate if the Bezier curves intersect
+figure;
+hold on
+title('Task 9a, Calculate if two rectangles intersect');
+points1 = [-1 0; 0 1; 1.5 1.5; 2.5 -1; 3 0; 2 2.5;];
+points2 = [0 2.5; 1 2.25; 2 1.5; 1 0.25; 0 -0.5;];
+boolean = intersection(points1, points2, 3);
+
+if (boolean > 0)
+    txt = 'Intersection: Yes';
+else
+    txt = 'Intersection: No';
+end
+text(1.8,1,txt);
+
+[x1,y1]=wrap(100,points1);
+[x2,y2]=wrap(100,points2);
+plot(x1,y1,'g--');
+plot(x2,y2,'b--');
+
+[~,~,controlPoints1] = splitlower(points1,0);
+plot(controlPoints1(:,1),controlPoints1(:,2),'+g');
+plot(controlPoints1(:,1),controlPoints1(:,2),'k:');
+[~,~,controlPoints1] = splitlower(points2,0);
+plot(controlPoints1(:,1),controlPoints1(:,2),'+b');
+plot(controlPoints1(:,1),controlPoints1(:,2),'k:');
+
+axis([-1.5, 5.5, -1.5, 4])
+lgnd=legend('Bezier curve 1','Bezier curve 2','Control points, curve 1','Control points, curve 1','Control points, curve 2','Control points, curve 2');
+set(lgnd,'color','none');
+saveas(gcf(),'task9a.png');
+
+% Task 9b calculate if the Bezier curves intersect
+figure;
+hold on
+title('Task 9b, Calculate if two rectangles intersect');
+points1 = [-1 0; 1 1.5; 2 2; 3 -1; -1 0;];
+points2 = [0 2.5; 1 2; 2 1.5; 2.5 0.5; 3.5 1;];
+
+boolean = intersection(points1, points2, 3);
+
+if (boolean > 0)
+    txt = 'Intersection: Yes';
+else
+    txt = 'Intersection: No';
+end
+text(1.8,1,txt);
+
+[x1,y1]=wrap(100,points1);
+[x2,y2]=wrap(100,points2);
+plot(x1,y1,'g--');
+plot(x2,y2,'b--');
+
+[~,~,controlPoints1] = splitlower(points1,0);
+plot(controlPoints1(:,1),controlPoints1(:,2),'+g');
+plot(controlPoints1(:,1),controlPoints1(:,2),'k:');
+[~,~,controlPoints1] = splitlower(points2,0);
+plot(controlPoints1(:,1),controlPoints1(:,2),'+b');
+plot(controlPoints1(:,1),controlPoints1(:,2),'k:');
+
+axis([-1.5, 5, -1.5, 4])
+lgnd=legend('Bezier curve 1','Bezier curve 2','Control points, curve 1','Control points, curve 1','Control points, curve 2','Control points, curve 2');
+set(lgnd,'color','none');
+saveas(gcf(),'task9b.png');
+
+% Task 10a
+figure;
+hold on;
+title('Task 10, Monogram without convex hull');
+points = [0 0.5; 0 5; 0 5; 0 5; 0 5; 0 5; 0 5; 4 3.75; 0 2.5; 0 2.5; 0 2.5; 0 2.5; 0 2.5; 0 2.5; 0 2.5; 1 0.25;
+    1.5 0; 1.5 0; 1.5 0; 3 0; 3 0; 3 0; 3 3; 3 3; 3 4.5; 3 5; 3 5; 5 3; 2 3;];
+
+[x,y] = wrap(200,points);
+plot(x,y,'g--');
+
+axis([-0.5, 5.5, -0.5, 5.5])
+lgnd=legend('Bezier curve');
+set(lgnd,'color','none');
+saveas(gcf(),'task10a.png');
+
+
+% Task 10b
+figure;
+hold on;
+title('Task 10, Monogram with convex hull');
+points = [0 0.5; 0 5; 0 5; 0 5; 0 5; 0 5; 0 5; 4 3.75; 0 2.5; 0 2.5; 0 2.5; 0 2.5; 0 2.5; 0 2.5; 0 2.5; 1 0.25;
+    1.5 0; 1.5 0; 1.5 0; 3 0; 3 0; 3 0; 3 3; 3 3; 3 4.5; 3 5; 3 5; 5 3; 2 3;];
+
+[x,y] = wrap(200,points);
+plot(x,y,'g--');
+
+x = points(:,1);
+y = points(:,2);
+k = convhull(x,y);
+plot(x(k),y(k),'g');
+
+axis([-0.5, 5.5, -0.5, 5.5])
+lgnd=legend('Bezier curve', 'Convex hull');
+set(lgnd,'color','none');
+saveas(gcf(),'task10b.png');
